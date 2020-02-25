@@ -175,7 +175,7 @@
         else if(!this.formUser.usernum){ this.$message.warning('请输入负责人id');}
         else if(!this.formUser.username){ this.$message.warning('请输入负责人姓名');}
         else if(!this.formUser.telephone){ this.$message.warning('请输入手机号');}
-        else if(this.formUser.telephone && !(/^1[3|4|5|8][0-9]\d{4,8}$/.test(this.formUser.telephone))){ this.$message.warning('请输入正确手机号');}
+        else if(this.formUser.telephone && !(/^1[3|4|5|7|8][0-9]\d{4,8}$/.test(this.formUser.telephone))){ this.$message.warning('请输入正确手机号');}
         else if(!this.formUser.email){ this.$message.warning('请输入邮箱');}
         else if(this.formUser.email && !(/^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/.test(this.formUser.email))){ this.$message.warning('请输入正确邮箱');}
         else{
@@ -195,7 +195,7 @@
       },
       handleClose(){
         this.confirmCreateVisiable = false;
-        this.formUser = {};
+        // this.formUser = {};
         this.confirmDeleteVisiable = false;
         this.selectedItem = '';
         this.queryCompany();
