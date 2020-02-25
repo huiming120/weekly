@@ -14,7 +14,7 @@ import "element-ui/lib/theme-chalk/index.css";
 /*全局fliter*/
 import * as commonFliter from './common/filters'
 Object.keys(commonFliter).forEach(key => {
-  Vue.filter(key, commonFliter[key])
+    Vue.filter(key, commonFliter[key])
 })
 
 Vue.config.productionTip = false
@@ -25,39 +25,43 @@ Vue.use(ElementUI);
 
 /*路由处理*/
 router.beforeEach((to, from, next) => {
-  let menuId;
-  let auditResult;
-  let applicationVerifyFlag;
-  let key = to.meta.key;
-  if (key) {
-    store.dispatch("getUserInfo", {}).then(response => {
-      if(JSON.stringify(response.data) === '{}'){
-        if (to.path !== '/weekly/login') {
-          return next('/weekly/login');
-        }
-        next();
-      }else{
-        if (to.path == '/weekly/login') {
-         if(response.data.role == 1 || response.data.role == 2 || response.data.role == 3){
-           return next('/weekly/weeklyView');
-         }else if(response.data.role == 4){
-           return next('/weekly/writeWeekly');
-         }
-        }
-        store.commit("USER_INFO", response.data);
-        next();
-      }
-    });
-  } else {
-    next({path: to.path})
-  }
+    let menuId;
+    let auditResult;
+    let applicationVerifyFlag;
+    let key = to.meta.key;
+    if (key) {
+        store.dispatch("getUserInfo", {}).then(response => {
+            if (JSON.stringify(response.data) === '{}') {
+                if (to.path !== '/weekly/login') {
+                    return next('/weekly/login');
+                }
+                next();
+            } else {
+                if (to.path == '/weekly/login') {
+                    if (response.data.role == 1 || response.data.role == 2 || response.data.role == 3) {
+                        return next('/weekly/weeklyView');
+                    } else if (response.data.role == 4) {
+                        return next('/weekly/writeWeekly');
+                    }
+                }
+                store.commit("USER_INFO", response.data);
+                next();
+            }
+        });
+    } else {
+        next({
+            path: to.path
+        })
+    }
 });
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  store,
-  components: { App },
-  template: '<App/>'
+    el: '#app',
+    router,
+    store,
+    components: {
+        App
+    },
+    template: '<App/>'
 })

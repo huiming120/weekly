@@ -19,7 +19,7 @@ exports.cache = {
         handle: redisCache,
         host: '127.0.0.1',
         port: 6379,
-        password: 'a123456'
+        // password: 'a123456'
     }
 };
 // exports.cache = {
@@ -76,7 +76,7 @@ exports.session = {
         handle: redisSession,
         host: '127.0.0.1',
         port: 6379,
-        password: 'a123456'
+        // password: 'a123456'
     }
 };
 

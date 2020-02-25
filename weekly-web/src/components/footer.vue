@@ -1,9 +1,9 @@
 <template>
     <footer class="footer">
       <div class="footer-wrapper">
-        <!--<div class="footer-link-wrap">-->
-          <!--欢迎使用{{systemName}}-->
-        <!--</div>-->
+       <div class="footer-link-wrap">
+          欢迎使用{{systemName}}
+        </div>
         <div class="footer-link-wrap">
           <a href="http://www.mwcxs.top/" target="_blank">交流学习社区</a>
           <a href="http://www.cnblogs.com/chengxs" target="_blank" >safeguardEagle</a>
