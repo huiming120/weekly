@@ -332,7 +332,7 @@
     },
     created(){
       if(this.userInfo.role == 1){
-        this.queryMemberListAdmin(1, 10);
+        // this.queryMemberListAdmin(1, 10);
         this.queryCompanyList();
       }else{
         this.queryMemberList(1, 10);
@@ -535,7 +535,7 @@
         else if(!this.formUser.email){ this.$message.warning('请输入邮箱');}
         else if(this.formUser.email && !(/^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/.test(this.formUser.email))){ this.$message.warning('请输入正确邮箱');}
         else if(!this.formUser.telephone){ this.$message.warning('请输入手机号');}
-        else if(this.formUser.telephone && !(/^1[3|4|5|8][0-9]\d{4,8}$/.test(this.formUser.telephone))){ this.$message.warning('请输入正确手机号');}
+        else if(this.formUser.telephone && !(/^1[3|4|5|7|8][0-9]\d{4,8}$/.test(this.formUser.telephone))){ this.$message.warning('请输入正确手机号');}
         else{
           this.formUser.department_name = this.departmentListMap[this.formUser.department_id];
           this.formUser.role_name = this.roleListMap[this.formUser.role];
